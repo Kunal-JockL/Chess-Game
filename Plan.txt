@@ -1,0 +1,63 @@
+
+Classes:
+
+2. Board:
+    - Attributes:
+        - grid (8x8 matrix to represent the board)
+    - Methods:
+        - display(): Prints the current state of the board. (Temperary display)
+                - valid_moves(board, current_position): Returns a list of valid moves for the piece on the current board.
+
+        - move_piece(start, end): Moves a piece from start to end if the move is valid.
+        - is_check(color): Checks if the specified color is in check.
+        - is_checkmate(color): Checks if the specified color is in checkmate.
+
+3. Player:
+    - Attributes:
+        - color (Black or White)
+    - Methods:
+        - make_move(board): Takes user input to make a move.
+
+4. Game:
+    - Attributes:
+        - board (an instance of the Board class)
+        - players (two instances of the Player class)
+    - Methods:
+        - start(): Initiates the game loop.
+        - end(): Ends the game and declares the winner.
+        - get_input(): Gets user input for making a move.
+
+5. Display:
+    - Attributes:
+        - Textures and Colors.
+        - Images of Chess peices.
+    - Methods:
+        - GetMove(): Function to get Move i.e. from, to.
+        - PutMove(): Can be used if program wants to play moves.
+
+
+Implementation Steps:
+  
+1. Piece Class:
+    - Define the Piece class with the required attributes and methods.
+
+2. Board Class:
+    - Define the Board class with an 8x8 grid to represent the chessboard.
+    - Implement the display method to visualize the board.
+    - Implement the move_piece method to move a piece on the board.
+    - Implement the is_check method to check if a king is in check.
+    - Implement the is_checkmate method to check for checkmate.
+
+3. Player Class:
+    - Define the Player class with the necessary attributes and methods.
+    - Implement the make_move method to take user input for making a move.
+
+4. Game Class:
+    - Define the Game class with the board and players.
+    - Implement the start method to initiate the game loop.
+    - Implement the end method to finish the game and declare the winner.
+    - Implement the get_input method to get user input.
+
+5. Main Program:
+    - Instantiate the Game class and call the start method to begin the game.
+
