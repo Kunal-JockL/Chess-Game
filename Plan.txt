@@ -34,6 +34,8 @@ Classes:
     - Methods:
         - GetMove(): Function to get Move i.e. from, to.
         - PutMove(): Can be used if program wants to play moves.
+        - getSelect(): get the square no dats been clicked on. 
+        - 
 
 
 Implementation Steps:
