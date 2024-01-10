@@ -1,5 +1,15 @@
+import pygame
+from Piece import Piece
+
 class board:
-    def __init__(self):
+    def __init__(self, window):
+        self.window = window
+        
+        self.boardWidth = 800
+        self.boardHeight = 800
+        
+        self.squareWidth = 100
+        self.squareHeight = 100
 
         self.board = [
             ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
@@ -11,6 +21,40 @@ class board:
             ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
             ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']
         ]
+        
+        self.pieceDict= {
+            'K': 'assets/whiteKing.png',
+            'Q': 'assets/whiteQueen.png',
+            'R': 'assets/whiteRook.png',
+            'B': 'assets/whiteBishop.png',
+            'N': 'assets/whiteKnight.png',
+            'P': 'assets/whitePawn.png',
+            'k': 'assets/blackKing.png',
+            'q': 'assets/blackQueen.png',
+            'r': 'assets/blackRook.png',
+            'b': 'assets/blackBishop.png',
+            'n': 'assets/blackKnight.png',
+            'p': 'assets/blackPawn.png'    
+        }
+
+        self.pieces = []
+
+        
+        for i in range(8):
+            for j in range(8):
+                piece = self.board[i][j]  
+                
+                if piece == '.':
+                    continue
+                
+                self.pieces.append(Piece(self.window, self.pieceDict.get(piece), j + (i * 8)))
+        
+    def render(self):
+        # for i in range(0,8):
+        #     for j in range(0,8):
+        #         pygame.draw.rect(self.WINDOW, (255, 255, 255) if (i + j) %2 == 0 else (0, 0, 0), pygame.Rect(self.squareWidth * i, self.squareWidth*j, self.squareWidth, self.squareWidth))
+        for piece in self.pieces:
+            piece.render()
 
     def display(self):
         for row in self.board:

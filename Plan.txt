@@ -63,3 +63,7 @@ Implementation Steps:
 5. Main Program:
     - Instantiate the Game class and call the start method to begin the game.
 
+    - display peices
+    - display validity
+    - display moves
+    - get moves
